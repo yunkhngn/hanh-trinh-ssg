@@ -49,7 +49,7 @@ const NavMobile = () => {
           border={{ b: "1px solid" }}
           borderColor="gray300"
           justify="flex-start"
-          onClick={() => window.open("https://www.facebook.com/luahanhphuc2024")}
+          onClick={() => window.open("https://www.facebook.com/hanhtrinhssg")}
         >
           <Text
           color="black500"
@@ -65,7 +65,7 @@ const NavMobile = () => {
           w="90%"
           transition
           justify="flex-start"
-          onClick={() => window.location.href = "mailto:contact@luahanhphuc.com"}
+          onClick={() => window.location.href = "mailto:hanhtrinhssg@gmail.com"}
         >
           <Text
           color="black500"

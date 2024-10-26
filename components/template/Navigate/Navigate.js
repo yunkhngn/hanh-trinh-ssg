@@ -4,17 +4,15 @@ import Image from "next/image";
 import IconNav from "./IconNav";
 import IconSetting from "./IconSetting";
 import NavMobile from "./NavMobile";
-import Link from "next/link";
+import {Button} from "atomize";
 
 import { navRoute } from "../../lib";
 
-const Navigate = () => {
+const Navigate = ({openSearch,search}) => {
   return (
     <nav className={styles.container}>
-      <div className={styles.logo}>
-        <Link href="/" passHref>
+      <div className={styles.logo} onClick={() => openSearch(!search)}>
           <Image src="/logo.svg" alt="logo" width={50} height={50} priority={true}/>
-        </Link>
       </div>
       <div className={styles.nav}>
         {navRoute.map((item, index) => (
@@ -22,8 +20,8 @@ const Navigate = () => {
         ))}
       </div>
       <div className={styles.setting}>
-        <IconSetting name="Facebook" link="https://www.facebook.com/luahanhphuc2024" />
-        <IconSetting name="Email" link="mailto:contact@luahanhphuc.com" />
+        <IconSetting name="Facebook" link="https://www.facebook.com/hanhtrinhssg" />
+        <IconSetting name="Email" link="mailto:hanhtrinhssg@gmail.com" />
       </div>
       <div className={styles.mobile}>
         <NavMobile />

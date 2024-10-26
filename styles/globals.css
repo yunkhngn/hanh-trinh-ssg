@@ -294,7 +294,28 @@ html ::selection{
   margin-bottom:1em;
 }
 
+.search{
+  width: 500px;
+  height: 50px;
+  padding: 10px;
+  color: #333;
+  font-size: 18px;  
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8.6px);
+  -webkit-backdrop-filter: blur(8.6px);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+}
+.search:focus{
+  outline: none;
+}
+
 @media (max-width: 768px) {
+  .search{
+    width: 90vw;
+  }
   .embedPhoto{
     width: 100%;
   }
