@@ -33,11 +33,11 @@ const Footer = () => {
         >
             <Text
             textSize="title"
-            >Dự án Lửa hạnh phúc được thành lập nên với mong muốn truyền tải và xây dựng “Lớp học hạnh phúc” trong các cơ sở giáo dục và nhà trường.</Text>
+            >Hành trình SSG là kho lưu trữ các dự án SSG qua các kỳ, đồng thời là cầu nối kết nối các thế hệ sinh viên. Tại đây, sinh viên có thể chia sẻ và học hỏi từ những kinh nghiệm thực tế của các dự án SSG trước đây.</Text>
             <Text
             m={{t: "2em"}}
             textSize="subheader"
-            >Email: contact@luahanhphuc.com</Text>
+            >Email: hanhtrinhssg@gmail.com</Text>
             <Text
             textSize="subheader"
             >Tel: 0376971168 (Mr. Khoa)</Text>
@@ -46,7 +46,7 @@ const Footer = () => {
       <hr className="footerHR" />
       <Div d="flex" justify="space-between" m={{ t: "2rem" }}>
         <Text textSize="body" textColor="gray800">
-          Copyright © Lửa hạnh phúc Project
+          Copyright © Hành Trình SSG
         </Text>
         <Text textSize="body" textColor="gray800">
           By Skibidi Team

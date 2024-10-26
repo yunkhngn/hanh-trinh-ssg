@@ -4,8 +4,6 @@ import Image from "next/image";
 import IconNav from "./IconNav";
 import IconSetting from "./IconSetting";
 import NavMobile from "./NavMobile";
-import {Button} from "atomize";
-
 import { navRoute } from "../../lib";
 
 const Navigate = ({openSearch,search}) => {

@@ -5,7 +5,7 @@ const About = () => {
   return (
     <section className='aboutUS wrapper'>
       <Title 
-        label="Tổng quan về dự án Lửa Hạnh Phúc."
+        label="Tổng quan về dự án Hành Trình SSG."
         pre="/ About us."
         size="display3"
         >Về dự án</Title>

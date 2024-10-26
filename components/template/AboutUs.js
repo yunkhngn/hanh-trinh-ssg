@@ -29,24 +29,23 @@ const AboutUs = () => {
         textSize="display2"
         textWeight="600"
         m="auto"
-        >Lửa hạnh phúc</Text>
+        >Hành Trình SSG</Text>
         <Text
         textSize="subheader"
         color="black400"
         m={{b: "2em" }}
-        >Một dự án của sinh viên trường đại học FPT</Text>
+        >Một dự án của các sinh viên trường đại học FPT</Text>
         <Text
         textSize="heading"
         m={{ t: "1em" }}
         w={{xs: "100%", md:"60%"}}
-        >Lớp học hạnh phúc là tế bào làm nên môi trường hạnh phúc, mỗi ngày đến trường là 1 ngày vui. Người học thực hiện nhiệm vụ một cách chủ động, tích cực, thoải mái và khát khao nhất. Học sẽ cảm thấy có niềm tin, sự rung động, động lực đến lớp và yêu quý, mong mỏi những giờ học của mình.<br/><br/>
-        Thấu hiểu được tầm quan trọng của những giá trị tốt đẹp của việc hình thành “Lớp học hạnh phúc” mang lại và ảnh hưởng tích cực tới nền giáo dục, dự án “Lửa hạnh phúc” được thành lập với mong muốn và sứ mệnh góp phần lan tỏa những giá trị tốt đẹp và hiệu quả mang lại tới các trường học, các cơ sở giáo dục, nhận thức của các bậc thầy cô và học sinh,... Với mục đích nhằm hướng tới việc hình thành các giá trị cốt lõi yêu thương, an toàn, tôn trọng, thấu hiểu.
+        >Dự án “Hành trình SSG” nhằm mục đích tổng hợp và chia sẻ thông tin về các dự án từ các lớp và khóa học trước trong môn SGG - Kỹ năng Giao tiếp và Cộng tác. Trang web này sẽ là nơi trưng bày các dự án đa dạng như thiện nguyện, short film, workshop, gây quỹ, và talkshow. Mục tiêu sẽ là tạo ra một trang web giúp sinh viên hiện tại và tương lai dễ dàng tiếp cận thông tin, học hỏi từ những dự án đã thành công, và khuyến khích họ đóng góp ý tưởng sáng tạo cho các hoạt động tiếp theo.
         </Text>
         <Text
         textSize="subheader"
         m={{ t: "1em" }}
         w={{xs: "100%", md:"60%"}}
-        ><q>Lớp học hạnh phúc là một khái niệm dần trở nên quen thuộc và vô cùng quan trọng trong ngành giáo dục. Bởi ngoài trang bị kiến thức, kỹ năng cho học sinh thì làm thế nào để trẻ “mỗi ngày đến trường là một ngày vui” được xem là mục tiêu mà bất kỳ một trường học nào cũng mong muốn đạt được.</q></Text>
+        ><q>Dự án không chỉ giúp phát triển kỹ năng làm việc nhóm và giao tiếp của sinh viên mà còn cung cấp nguồn tài liệu tham khảo hữu ích, khơi gợi cảm hứng cho các khóa học tương lai. Chúng em đề xuất xây dựng website có giao diện thân thiện, với hệ thống tìm kiếm dễ sử dụng và tính năng lọc theo loại dự án, năm học, và lớp học.</q></Text>
       </div>
     </Div>
   )

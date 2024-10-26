@@ -7,15 +7,8 @@ const Contact = () => {
     >
         <Text
         textSize="heading"
-        >Liên hệ với chúng tớ để biết thêm thông tin về dự án Lửa hạnh phúc.</Text>
+        >Liên hệ với chúng tớ để biết thêm thông tin về dự án.</Text>
         <br/>
-        <Text
-        textSize="subheader"
-        >
-        <i>
-        Dự án Lửa hạnh phúc được thành lập nên với mong muốn truyền tải và xây dựng các “Lớp học hạnh phúc” trong các cơ sở giáo dục và nhà trường.
-        </i>
-        </Text>
         <Text
         textSize="subheader"
         >Trưởng dự án: Nguyễn Đăng Khoa</Text>
@@ -24,10 +17,10 @@ const Contact = () => {
         >Giảng viên hướng dẫn: Khuất Thị Hoa</Text>
         <Text
         textSize="subheader"
-        >Gmail: luahanhphuc@gmail.com</Text>
+        >Gmail: hanhtrinhssg@gmail.com</Text>
         <Text
         textSize="subheader"
-        >Facebook: Lửa Hạnh Phúc</Text>
+        >Facebook: Hành Trình SSG</Text>
     </Div>
   )
 }
