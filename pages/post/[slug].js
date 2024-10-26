@@ -135,9 +135,10 @@ const WritingPage = ({ post }) => {
   const desc = {
     title: `${post.Title}`,
     description: truncateHtml(post.Body, 100),
-    url: `https://luahanhphuc.vercel.app/post/${post.slug}`,
+    url: `https://hanhtrinhssg.vercel.app/post/${post.slug}`,
     img: post.Image,
   };
+
   return <Template meta={desc}>
     <div className="wrapper">
     <Div m={{ t: {xs:"3em", md:"5em"}}}>

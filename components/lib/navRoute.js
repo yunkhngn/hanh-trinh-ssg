@@ -7,6 +7,11 @@ const navRoute = [
         "name": "UserCircle",
         "route": "/about-us"
     },
+
+    {
+        "name": "History",
+        "route": "/project"
+    },
     {
         "name": "Bulk",
         "route": "/gallery"

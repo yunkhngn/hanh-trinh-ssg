@@ -13,7 +13,7 @@ const client = contentful.createClient({
 const gallery = ({data}) => {
   return (
     <Template meta={desc.gallery}>
-     <Pics data={data} />
+      <Pics data={data} />
     </Template>
   )
 }
