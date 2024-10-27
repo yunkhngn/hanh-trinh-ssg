@@ -11,7 +11,6 @@ const client = contentful.createClient({
 });
 
 const project = ({data}) => {
-  console.log(data)
   return (
     <Template meta={desc.project}>
       <Prj data={data}/>

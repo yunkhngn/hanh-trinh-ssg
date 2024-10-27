@@ -21,7 +21,7 @@ const Search = ({openSearch}) => {
         .trim()
         .toLowerCase()
         .replace(/ /g, '-');
-      router.push(`/${slug}`);
+      router.push(`project/${slug}`);
     }
   };
 
