@@ -1,5 +1,5 @@
 import React from 'react'
-import {Div, Input, Button} from 'atomize'
+import {Div} from 'atomize'
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 
@@ -22,6 +22,7 @@ const Search = ({openSearch}) => {
         .toLowerCase()
         .replace(/ /g, '-');
       router.push(`project/${slug}`);
+      openSearch(false);
     }
   };
 

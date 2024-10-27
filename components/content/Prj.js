@@ -31,6 +31,7 @@ const Prj = ({ data }) => {
                 <div className='poster__image'>
                   <Image src={project.image} alt={project.name}
                       fill
+                      loading="lazy"
                       style={{
                         objectFit: 'cover',
                         borderRadius: '10px',

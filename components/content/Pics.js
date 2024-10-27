@@ -18,7 +18,7 @@ const Pics = ({ data }) => {
             src={item.image}
             alt={item.title}
             fill
-            priority={true}
+            loading="lazy"
             style={{
               objectFit: "cover",
             }}
