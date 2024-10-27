@@ -78,7 +78,7 @@ const ProjectInfo = ({data}) => {
         <Div m={{ t: {xs:"3em", md:"5em"}}}>
       <div className="path">
         <Text textSize="subheader" textWeight="500">
-           <Link href="/post"><strong>Post</strong></Link> / {data.name}
+           <Link href="/project"><strong>Project</strong></Link> / {data.name}
         </Text>
       </div>
       <Text textSize="display3" m={{ b: "10px", t: "20px" }} textWeight="550">
