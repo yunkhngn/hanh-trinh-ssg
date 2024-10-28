@@ -84,13 +84,13 @@ const ProjectInfo = ({data}) => {
       <Text textSize="display3" m={{ b: "10px", t: "20px" }} textWeight="550">
         {data.name}
       </Text>
-      <Div d="flex" flexDir="row">
+      <Div d="flex" flexDir="row" m={{b:"2em"}} >
         <Tag
           bg="brand700"
           textColor="white"
           m={{ r: "0.5rem", b: "1rem" }}
         >
-          {data.genre}
+          Dự án {data.genre}
         </Tag>
         <Tag
           bg="white"
@@ -99,7 +99,7 @@ const ProjectInfo = ({data}) => {
           borderColor="success500"
           m={{ r: "0.5rem", b: "1rem" }}
         >
-          {data.year}
+         Năm {data.year}
         </Tag>
         <Anchor href={data.link} target="_blank">
         <Tag
@@ -112,8 +112,9 @@ const ProjectInfo = ({data}) => {
         </Tag>
       </Anchor>
       </Div>
-      <Text textSize="subheader" m={{ b: "10px", t: "20px" }}>
-       Nhóm <strong>{data.group}</strong>
+      <hr className="seperate"/>
+      <Text textSize="subheader" m={{ b: "10px", t: "10px" }}>
+       Nhóm thực hiện: <strong>{data.group}</strong>
       </Text>
       <Text textSize="subheader" m={{ b: "10px", t: "10px" }}>
        Giảng viên hướng dẫn: <strong>{data.guider}</strong>
@@ -122,7 +123,7 @@ const ProjectInfo = ({data}) => {
         Năm thực hiện: <strong>{data.year}</strong>
       </Text>
       <Text textSize="subheader" w={{xs: "90%", md:"60%"}} m={{ b: "2em" }}>
-        <strong>Tóm tắt:</strong> {data.description}
+        <strong>Tóm tắt:<br/></strong> {data.description}
       </Text>
       <hr className="seperate"/>
       <div className="picsGallery">

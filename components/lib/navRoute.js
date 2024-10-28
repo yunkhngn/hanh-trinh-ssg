@@ -9,7 +9,7 @@ const navRoute = [
     },
 
     {
-        "name": "History",
+        "name": "Draft",
         "route": "/project"
     },
     {

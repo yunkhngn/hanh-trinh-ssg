@@ -1,6 +1,5 @@
 import React from "react";
-import { ShowCase, AboutUs, Title, Info, Footer, ImageFull } from "@/components/template";
-import { Text } from "atomize";
+import { ShowCase, AboutUs, Title, Footer, ImageFull } from "@/components/template";
 
 const Homepage = () => {
   return (

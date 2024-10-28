@@ -3,7 +3,20 @@ import { Title, Footer } from "../template";
 import Link from "next/link";
 import { Div, Text } from "atomize";
 import Image from "next/image";
+
 const Prj = ({ data }) => {
+  const truncateHtml = (str, length) => {
+    const div = document.createElement("div");
+    div.innerHTML = str;
+    let text = div.textContent || div.innerText || "";
+    if (text.length <= length) {
+      return text;
+    }
+    text = text.substring(0, length);
+    const last = text.lastIndexOf(" ");
+    text = text.substring(0, last);
+    return text + "...";
+  }
   return (
     <section className="poster wrapper">
       <Title label="Các dự án SSG đã được đi vào hoạt động." pre="/ Project." size="display3">
@@ -49,7 +62,7 @@ const Prj = ({ data }) => {
                <Text
                m={{ b: "1rem" }}
               
-               >{project.description}</Text>
+               >{truncateHtml(project.description, 100)}</Text>
                  <p className="linkTo">Tìm hiểu thêm</p>
               </Div>
               </Link>
