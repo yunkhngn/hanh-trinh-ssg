@@ -40,8 +40,9 @@ const Search = ({openSearch}) => {
       value={inputValue}
       onChange={(e) => setInputValue(e.target.value)}
       onKeyPress={handleKeyPress}
-      onFocusOut={() => openSearch(false)}
+      onBlur={() => openSearch(false)}
       placeholder="Nhập tên dự án..."
+      autoFocus
     />
     </Div>
   )
