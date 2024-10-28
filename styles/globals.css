@@ -301,14 +301,13 @@ html ::selection{
   color: #333;
   font-size: 18px;  
   font-weight: 500;
-  background: rgba(255, 255, 255, 0.8);
+  background: #f9f9f9;
   border-radius: 10px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(8.6px);
-  -webkit-backdrop-filter: blur(8.6px);
-  border: 1px solid rgba(255, 255, 255, 0.26);
+  border: 1px solid #F1F2F4;
 }
-.search:focus{
+
+input, select:focus{
   outline: none;
 }
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Div} from 'atomize'
+import {Div, Icon} from 'atomize'
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 
