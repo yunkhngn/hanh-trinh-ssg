@@ -135,7 +135,7 @@ const WritingPage = ({ post }) => {
   const desc = {
     title: `${post.Title}`,
     description: truncateHtml(post.Body, 100),
-    url: `https://hanhtrinhssg.vercel.app/post/${post.slug}`,
+    url: `https://hanhtrinhssg.tech/post/${post.slug}`,
     img: post.Image,
   };
 

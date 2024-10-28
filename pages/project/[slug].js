@@ -69,7 +69,7 @@ const ProjectInfo = ({data}) => {
   const desc = {
     title: `${data.name}`,
     description: `${data.description}`,
-    url: `https://hanhtrinhssg.vercel.app/project/${data.slug}`,
+    url: `https://hanhtrinhssg.tech/project/${data.slug}`,
     img: "https:" + data.image[0].fields.file.url,
   };
   return (
