@@ -32,7 +32,10 @@ const Prj = ({ data }) => {
     const lastSpace = truncated.lastIndexOf(" ");
     return truncated.substring(0, lastSpace > 0 ? lastSpace : length) + "...";
   };
-
+  const [loaded, setLoaded] = useState(false);
+  const handleImageLoad = () => {
+    setLoaded(true);
+  };
   return (
     <section className="poster wrapper">
       <Title label="Các dự án SSG đã được đi vào hoạt động." pre="/ Project." size="display3">
@@ -83,11 +86,12 @@ const Prj = ({ data }) => {
                   transition
                   cursor="pointer"
                 >
-                  <div className="poster__image">
+                  <div className={"poster__image "+ (loaded ? "" : "skeleton")}>
                     <Image 
                       src={project.image} 
                       alt={project.name}
                       fill
+                      onLoad={handleImageLoad}
                       quality={50}
                       loading="lazy"
                       style={{

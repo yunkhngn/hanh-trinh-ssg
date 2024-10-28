@@ -3,7 +3,12 @@ import {Title, Footer} from '../template'
 import Link from 'next/link'
 import {Div, Text} from 'atomize'
 import Image from 'next/image'
+import { useState } from 'react'
 const Poster = ({data}) => {
+  const [loaded, setLoaded] = useState(false);
+  const handleImageLoad = () => {
+    setLoaded(true);
+  };
   return (
     <section className='poster wrapper'>
         <Title 
@@ -20,9 +25,12 @@ const Poster = ({data}) => {
             rounded="md"
             transition
             >
-              <div className='poster__image'>
+              <div className={"poster__image "+ (loaded ? "" : "skeleton")}>
                 <Image src={item.img} alt={item.title}
                     fill
+                    loading="lazy"
+                    quality={50}
+                    onLoad={handleImageLoad}
                     style={{
                       objectFit: 'cover',
                       borderRadius: '10px',
