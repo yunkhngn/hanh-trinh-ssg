@@ -19,6 +19,7 @@ const Pics = ({ data }) => {
             alt={item.title}
             fill
             loading="lazy"
+            quality={50}
             style={{
               objectFit: "cover",
             }}

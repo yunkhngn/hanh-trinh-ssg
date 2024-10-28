@@ -88,6 +88,7 @@ const Prj = ({ data }) => {
                       src={project.image} 
                       alt={project.name}
                       fill
+                      quality={50}
                       loading="lazy"
                       style={{
                         objectFit: 'cover',

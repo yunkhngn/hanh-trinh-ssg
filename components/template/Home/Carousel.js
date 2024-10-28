@@ -95,6 +95,7 @@ const Carousel = () => {
             <Image src={item} 
             alt="stock" 
             fill
+            quality={75}
             priority={true}
             style={{ objectFit: "cover" }} />
           </div>
