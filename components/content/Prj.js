@@ -5,6 +5,7 @@ import { Div, Text, Tag } from "atomize";
 import Image from "next/image";
 
 const Prj = ({ data }) => {
+  console.log(data);
   const [selectedYear, setSelectedYear] = useState("all");
   const [selectedType, setSelectedType] = useState("all");
   const [searchText, setSearchText] = useState(""); // State cho tìm kiếm
@@ -13,18 +14,30 @@ const Prj = ({ data }) => {
   const handleTypeChange = (e) => setSelectedType(e.target.value);
   const handleSearchChange = (e) => setSearchText(e.target.value); // Cập nhật khi tìm kiếm
 
-  const filteredPosts = data.filter((post) => {
-    const matchesYear =
-      selectedYear === "all" || post.year === Number(selectedYear);
-    const matchesType =
-      selectedType === "all" || post.type === Number(selectedType);
-    const matchesSearch =
-      post.projects.some((project) =>
-        project.name.toLowerCase().includes(searchText.toLowerCase())
-      );
-
-    return matchesYear && matchesType && matchesSearch;
-  });
+  const filterProjects = () => {
+    return data
+      .map((post) => {
+        // Lọc các project trong từng post dựa trên selectedType và searchText
+        const filteredProjects = post.projects.filter((project) => {
+          const matchesType = selectedType === "all" || project.genre === selectedType;
+          const matchesSearch = project.name.toLowerCase().includes(searchText.toLowerCase());
+          return matchesType && matchesSearch;
+        });
+  
+        // Nếu có projects thoả mãn điều kiện, trả về post đã lọc projects, ngược lại bỏ qua
+        if (filteredProjects.length > 0) {
+          return { ...post, projects: filteredProjects };
+        }
+        return null;
+      })
+      .filter((post) => {
+        // Chỉ giữ lại các post có năm phù hợp và có ít nhất một project
+        return post && (selectedYear === "all" || post.year === Number(selectedYear));
+      });
+  };
+  
+  // Sau đó dùng filterProjects để render dữ liệu
+  const filteredPosts = filterProjects();
 
   const truncateText = (text, length) => {
     if (text.length <= length) return text;
@@ -58,11 +71,11 @@ const Prj = ({ data }) => {
         </select>
         <select className="select" onChange={handleTypeChange}>
           <option value="all">Dự án</option>
-          <option value="1">Thiết kế ứng dụng</option>
-          <option value="2">Thiện nguyện</option>
-          <option value="3">Làm phim</option>
-          <option value="4">Tổ chức sự kiện</option>
-          <option value="5">Khác</option>
+          <option value="Thiết kế ứng dụng">Thiết kế ứng dụng</option>
+          <option value="Thiện nguyện">Thiện nguyện</option>
+          <option value="Làm phim">Làm phim</option>
+          <option value="Tổ chức sự kiện">Tổ chức sự kiện</option>
+          <option value="Khác">Khác</option>
         </select>
       </Div>
 
