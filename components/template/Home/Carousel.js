@@ -57,8 +57,8 @@ const Prev = (props) => {
 
 const Carousel = () => {
   const img = [
-    "/stock/stock-6.jpg",
-    "/stock/stock-1.jpg",
+    "/stock/forest.jpg",
+    "/stock/post1.jpeg",
   ];
   const settings = {
     dots: true,
