@@ -45,7 +45,7 @@ const AboutUs = () => {
         textSize="subheader"
         m={{ t: "1em" }}
         w={{xs: "100%", md:"60%"}}
-        ><q>Dự án không chỉ giúp phát triển kỹ năng làm việc nhóm và giao tiếp của sinh viên mà còn cung cấp nguồn tài liệu tham khảo hữu ích, khơi gợi cảm hứng cho các khóa học tương lai. Chúng em đề xuất xây dựng website có giao diện thân thiện, với hệ thống tìm kiếm dễ sử dụng và tính năng lọc theo loại dự án, năm học, và lớp học.</q></Text>
+        ><q>Dự án không chỉ giúp phát triển kỹ năng làm việc nhóm và giao tiếp của sinh viên mà còn cung cấp nguồn tài liệu tham khảo hữu ích, khơi gợi cảm hứng cho các khóa học tương lai.</q></Text>
       </div>
     </Div>
   )

@@ -1,16 +1,30 @@
 import React, { useState } from "react";
-import { Title, Footer } from "../template";
+import { Title, Footer, SearchField } from "../template";
 import Link from "next/link";
 import { Div, Text, Button } from "atomize";
 import Image from "next/image";
 
 const Prj = ({ data }) => {
-  const [visibleProjectsByYear, setVisibleProjectsByYear] = useState(
-    data.reduce((acc, item) => {
-      acc[item.year] = 10; 
-      return acc;
-    }, {})
-  );
+  const [selectedYear, setSelectedYear] = useState("all");
+  const [selectedType, setSelectedType] = useState("all");
+  const [searchText, setSearchText] = useState(""); // State cho tìm kiếm
+
+  const handleYearChange = (e) => setSelectedYear(e.target.value);
+  const handleTypeChange = (e) => setSelectedType(e.target.value);
+  const handleSearchChange = (e) => setSearchText(e.target.value); // Cập nhật khi tìm kiếm
+
+  const filteredPosts = data.filter((post) => {
+    const matchesYear =
+      selectedYear === "all" || post.year === Number(selectedYear);
+    const matchesType =
+      selectedType === "all" || post.type === Number(selectedType);
+    const matchesSearch =
+      post.projects.some((project) =>
+        project.name.toLowerCase().includes(searchText.toLowerCase())
+      );
+
+    return matchesYear && matchesType && matchesSearch;
+  });
 
   const truncateText = (text, length) => {
     if (text.length <= length) return text;
@@ -19,22 +33,40 @@ const Prj = ({ data }) => {
     return truncated.substring(0, lastSpace > 0 ? lastSpace : length) + "...";
   };
 
-  const handleShowMore = (year) => {
-    setVisibleProjectsByYear((prev) => ({
-      ...prev,
-      [year]: prev[year] + 10,
-    }));
-  };
-
   return (
     <section className="poster wrapper">
       <Title label="Các dự án SSG đã được đi vào hoạt động." pre="/ Project." size="display3">
         Dự án
       </Title>
 
-      {data.map((item, index) => (
+      {/* Tìm kiếm */}
+      <SearchField 
+        placeholder="Tìm kiếm dự án theo tên..." 
+        postName="prj"
+        onChange={handleSearchChange} // Thêm onChange cho tìm kiếm
+      />
+
+      <Div d="flex">
+        <select className="select" onChange={handleYearChange}>
+          <option value="all">Năm</option>
+          {Array.from(new Set(data.map(item => item.year))).map((year, index) => (
+            <option key={index} value={year}>Năm {year}</option>
+          ))}
+        </select>
+        <select className="select" onChange={handleTypeChange}>
+          <option value="all">Dự án</option>
+          <option value="1">Thiết kế ứng dụng</option>
+          <option value="2">Thiện nguyện</option>
+          <option value="3">Làm phim</option>
+          <option value="4">Tổ chức sự kiện</option>
+          <option value="5">Khác</option>
+        </select>
+      </Div>
+
+      {/* Render các dự án đã lọc */}
+      {filteredPosts.map((item, index) => (
         <Div key={index}>
-          <Div m={{ t: { xs: "3em", md: "5em" }, b: "1em" }}>
+          <Div m={{ t: { xs: "3em", md: "3em" }, b: "1em" }}>
             <div className="path">
               <Text textSize="heading" textWeight="500">
                 <strong>Năm {item.year}</strong>
@@ -42,8 +74,8 @@ const Prj = ({ data }) => {
             </div>
           </Div>
           <div className="poster__content">
-            {item.projects.slice(0, visibleProjectsByYear[item.year]).map((project, index) => (
-              <Link href={`/project/${project.slug}`} key={index} passHref>
+            {item.projects.map((project, projectIndex) => (
+              <Link href={`/project/${project.slug}`} key={projectIndex} passHref className="prj">
                 <Div 
                   p="1em 1em 3em"
                   hoverBg="gray200"
@@ -71,16 +103,6 @@ const Prj = ({ data }) => {
               </Link>
             ))}
           </div>
-          {item.projects.length > visibleProjectsByYear[item.year] && (
-            <Div m={{ t: "2rem" }} d="flex" justify="center">
-              <Button 
-                onClick={() => handleShowMore(item.year)}
-                bg="#FFE381"
-                textColor="black"
-                hoverBg="warning700"
-                >Hiển thị thêm</Button>
-            </Div>
-          )}
         </Div>
       ))}
 
