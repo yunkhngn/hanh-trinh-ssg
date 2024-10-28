@@ -280,6 +280,12 @@ html ::selection{
   opacity: 0.5;
 }
 
+.project__list{
+  width: 100%;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .poster__content{
   width: 100%;
   display:grid;
@@ -289,6 +295,14 @@ html ::selection{
 .poster__image{
   position: relative;
   aspect-ratio: 16/9;
+  overflow: hidden;
+  cursor: pointer;
+  margin-bottom:1em;
+}
+
+.project__image{
+  position: relative;
+  aspect-ratio: 1/1;
   overflow: hidden;
   cursor: pointer;
   margin-bottom:1em;
@@ -364,6 +378,11 @@ input, select:focus{
     display:grid;
     grid-template-columns: 1fr;
     gap: 1em;
+  }
+  .project__list{
+    width: 100%;
+    display:grid;
+    grid-template-columns: 1fr;
   }
   .teamMember{
     display: grid;

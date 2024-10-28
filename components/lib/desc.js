@@ -25,7 +25,7 @@ const desc = {
     },
     post: {
         route: '/post',
-        title: 'Bài viết',
+        title: 'Bài đăng',
         url: 'https://hanhtrinhssg.tech/post',
         description: 'Bài viết về các dự án.',
     },

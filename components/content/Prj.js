@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Title, Footer, SearchField } from "../template";
 import Link from "next/link";
-import { Div, Text, Button } from "atomize";
+import { Div, Text, Tag } from "atomize";
 import Image from "next/image";
 
 const Prj = ({ data }) => {
@@ -38,8 +38,8 @@ const Prj = ({ data }) => {
   };
   return (
     <section className="poster wrapper">
-      <Title label="Các dự án SSG đã được đi vào hoạt động." pre="/ Project." size="display3">
-        Dự án
+      <Title label="Các dự án SSG đã hoàn thành, được đi vào hoạt động được tổng hợp." pre="/ Project." size="display3">
+        Kho tàng dự án
       </Title>
 
       {/* Tìm kiếm */}
@@ -76,7 +76,7 @@ const Prj = ({ data }) => {
               </Text>
             </div>
           </Div>
-          <div className="poster__content">
+          <div className="project__list">
             {item.projects.map((project, projectIndex) => (
               <Link href={`/project/${project.slug}`} key={projectIndex} passHref className="prj">
                 <Div 
@@ -86,7 +86,7 @@ const Prj = ({ data }) => {
                   transition
                   cursor="pointer"
                 >
-                  <div className={"poster__image "+ (loaded ? "" : "skeleton")}>
+                  <div className={"project__image "+ (loaded ? "" : "skeleton")}>
                     <Image 
                       src={project.image} 
                       alt={project.name}
@@ -101,9 +101,25 @@ const Prj = ({ data }) => {
                     />
                   </div>
                   <Text textSize="title" textWeight="bold">{project.name}</Text>
-                  <Text m={{ b: "1rem" }} textSize="subheader">{project.genre}</Text>
+                  <Div
+                  d="flex"
+                  m={{ t: "0.5rem" }}
+                  >
+                  <Tag
+                  bg="success700"
+                  textColor="success100"
+                  m={{ r: "0.5rem", b: "1rem" }}
+                  >{project.genre}</Tag>
+                  <Tag
+                  bg="gray100"
+                  borderColor="gray500"
+                  textColor="dark"
+                  border="1px solid"
+                  m={{ r: "0.5rem", b: "1rem" }}
+                  >Nhóm {project.group}</Tag>
+                  </Div>
                   <Text m={{ b: "1rem" }}>{truncateText(project.description, 150)}</Text>
-                  <p className="linkTo">Tìm hiểu thêm</p>
+                  <p className="linkTo">Xem thêm</p>
                 </Div>
               </Link>
             ))}

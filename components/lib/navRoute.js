@@ -4,11 +4,6 @@ const navRoute = [
         "route": "/"
     },
     {
-        "name": "UserCircle",
-        "route": "/about-us"
-    },
-
-    {
         "name": "Draft",
         "route": "/project"
     },
@@ -19,6 +14,10 @@ const navRoute = [
     {
         "name": "EditSolid",
         "route": "/post"
+    },
+    {
+        "name": "InfoSolid",
+        "route": "/about-us"
     },
     {
         "name": "Mail",

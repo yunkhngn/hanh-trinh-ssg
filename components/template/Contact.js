@@ -6,7 +6,7 @@ const Contact = () => {
     w={{ xs: "100%", md: "50%" }}
     >
         <Text
-        textSize="heading"
+        textSize="title"
         >Liên hệ với chúng tớ để biết thêm thông tin về dự án.</Text>
         <br/>
         <Text

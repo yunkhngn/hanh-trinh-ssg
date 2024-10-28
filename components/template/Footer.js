@@ -32,7 +32,7 @@ const Footer = () => {
         m={{ t: { xs: "3em", md: "0" } }}
         >
             <Text
-            textSize="title"
+            textSize="subheader"
             >Hành trình SSG là kho lưu trữ các dự án SSG qua các kỳ, đồng thời là cầu nối kết nối các thế hệ sinh viên. Tại đây, sinh viên có thể chia sẻ và học hỏi từ những kinh nghiệm thực tế của các dự án SSG trước đây.</Text>
             <Text
             m={{t: "2em"}}
