@@ -33,7 +33,7 @@ export async function getStaticProps() {
       year: item.fields.year,
       group: item.fields.group,
     };
-  });
+  })
   const groupedData = Object.entries(data.reduce((acc, project) => {
     const { year } = project;
   

@@ -8,37 +8,32 @@ const Prj = ({ data }) => {
   console.log(data);
   const [selectedYear, setSelectedYear] = useState("all");
   const [selectedType, setSelectedType] = useState("all");
-  const [searchText, setSearchText] = useState(""); // State cho tìm kiếm
+  const [searchText, setSearchText] = useState("");
 
   const handleYearChange = (e) => setSelectedYear(e.target.value);
   const handleTypeChange = (e) => setSelectedType(e.target.value);
-  const handleSearchChange = (e) => setSearchText(e.target.value); // Cập nhật khi tìm kiếm
+  const handleSearchChange = (e) => setSearchText(e.target.value);
 
   const filterProjects = () => {
     return data
       .map((post) => {
-        // Lọc các project trong từng post dựa trên selectedType và searchText
         const filteredProjects = post.projects.filter((project) => {
           const matchesType = selectedType === "all" || project.genre === selectedType;
           const matchesSearch = project.name.toLowerCase().includes(searchText.toLowerCase());
           return matchesType && matchesSearch;
         });
   
-        // Nếu có projects thoả mãn điều kiện, trả về post đã lọc projects, ngược lại bỏ qua
         if (filteredProjects.length > 0) {
           return { ...post, projects: filteredProjects };
         }
         return null;
       })
       .filter((post) => {
-        // Chỉ giữ lại các post có năm phù hợp và có ít nhất một project
         return post && (selectedYear === "all" || post.year === Number(selectedYear));
       });
   };
   
-  // Sau đó dùng filterProjects để render dữ liệu
   const filteredPosts = filterProjects();
-
   const truncateText = (text, length) => {
     if (text.length <= length) return text;
     const truncated = text.substring(0, length);

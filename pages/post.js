@@ -44,6 +44,7 @@ export async function getStaticProps() {
     img: 'https:' + item.fields.img.fields.file.url,
     description: truncateHtml(item.fields.rich,200),
   }))
+  content.sort((a, b) => new Date(b.date) - new Date(a.date));
   return {
     props: {
       data: content
