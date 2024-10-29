@@ -1,18 +1,30 @@
 import React, { useState } from "react";
 import { Title, Footer, SearchField } from "../template";
 import Link from "next/link";
-import { Div, Text, Tag } from "atomize";
+import { Div, Text, Tag, Button } from "atomize";
 import Image from "next/image";
 
 const Prj = ({ data }) => {
-  console.log(data);
   const [selectedYear, setSelectedYear] = useState("all");
   const [selectedType, setSelectedType] = useState("all");
   const [searchText, setSearchText] = useState("");
+  const [visibleProjectsByYear, setVisibleProjectsByYear] = useState(
+    data.reduce((acc, item) => {
+      acc[item.year] = 6; // Mặc định hiển thị 20 dự án mỗi năm
+      return acc;
+    }, {})
+  );
 
   const handleYearChange = (e) => setSelectedYear(e.target.value);
   const handleTypeChange = (e) => setSelectedType(e.target.value);
   const handleSearchChange = (e) => setSearchText(e.target.value);
+
+  const handleShowMore = (year) => {
+    setVisibleProjectsByYear((prev) => ({
+      ...prev,
+      [year]: prev[year] + 6, // Tăng thêm 20 dự án cho năm được nhấn
+    }));
+  };
 
   const filterProjects = () => {
     return data
@@ -32,18 +44,16 @@ const Prj = ({ data }) => {
         return post && (selectedYear === "all" || post.year === Number(selectedYear));
       });
   };
-  
+
   const filteredPosts = filterProjects();
+
   const truncateText = (text, length) => {
     if (text.length <= length) return text;
     const truncated = text.substring(0, length);
     const lastSpace = truncated.lastIndexOf(" ");
     return truncated.substring(0, lastSpace > 0 ? lastSpace : length) + "...";
   };
-  const [loaded, setLoaded] = useState(false);
-  const handleImageLoad = () => {
-    setLoaded(true);
-  };
+
   return (
     <section className="poster wrapper">
       <Title label="Các dự án SSG đã hoàn thành, được đi vào hoạt động được tổng hợp." pre="/ Project." size="display3">
@@ -54,7 +64,7 @@ const Prj = ({ data }) => {
       <SearchField 
         placeholder="Tìm kiếm dự án theo tên..." 
         postName="prj"
-        onChange={handleSearchChange} // Thêm onChange cho tìm kiếm
+        onChange={handleSearchChange}
       />
 
       <Div d="flex">
@@ -85,56 +95,69 @@ const Prj = ({ data }) => {
             </div>
           </Div>
           <div className="project__list">
-            {item.projects.map((project, projectIndex) => (
-              <Link href={`/project/${project.slug}`} key={projectIndex} passHref className="prj">
-                <Div 
-                  p="1em 1em 3em"
-                  hoverBg="gray200"
-                  rounded="md"
-                  transition
-                  cursor="pointer"
-                >
-                  <div className={"project__image "+ (loaded ? "" : "skeleton")}>
-                    <Image 
-                      src={project.image} 
-                      alt={project.name}
-                      fill
-                      onLoad={handleImageLoad}
-                      quality={50}
-                      loading="lazy"
-                      style={{
-                        objectFit: 'cover',
-                        borderRadius: '10px',
-                      }}
-                    />
-                  </div>
-                  <Text textSize="title" textWeight="bold">{project.name}</Text>
-                  <Div
-                  d="flex"
-                  m={{ t: "0.5rem" }}
-                  >
-                  <Tag
-                  bg="success700"
-                  textColor="success100"
-                  m={{ r: "0.5rem", b: "1rem" }}
-                  >{project.genre}</Tag>
-                  <Tag
-                  bg="gray100"
-                  borderColor="gray500"
-                  textColor="dark"
-                  border="1px solid"
-                  m={{ r: "0.5rem", b: "1rem" }}
-                  >Nhóm {project.group}</Tag>
-                  </Div>
-                  <Text m={{ b: "1rem" }}>{truncateText(project.description, 150)}</Text>
-                  <p className="linkTo">Xem thêm</p>
-                </Div>
-              </Link>
-            ))}
+          {item.projects
+  .sort(() => Math.random() - 0.5) // Xáo trộn mảng dự án
+  .slice(0, visibleProjectsByYear[item.year])
+  .map((project, projectIndex) => (
+    <Link href={`/project/${project.slug}`} key={projectIndex} passHref className="prj">
+      <Div 
+        p="1em 1em 3em"
+        hoverBg="gray200"
+        rounded="md"
+        transition
+        cursor="pointer"
+      >
+        <div className={"project__image"}>
+          <Image 
+            src={project.image} 
+            alt={project.name}
+            fill
+            quality={50}
+            loading="lazy"
+            style={{
+              objectFit: 'cover',
+              borderRadius: '10px',
+            }}
+          />
+        </div>
+        <Text textSize="title" textWeight="bold">{project.name}</Text>
+        <Div d="flex" m={{ t: "0.5rem" }}>
+          <Tag
+            bg="success700"
+            textColor="success100"
+            m={{ r: "0.5rem", b: "1rem" }}
+          >
+            {project.genre}
+          </Tag>
+          <Tag
+            bg="gray100"
+            borderColor="gray500"
+            textColor="dark"
+            border="1px solid"
+            m={{ r: "0.5rem", b: "1rem" }}
+          >
+            Nhóm {project.group}
+          </Tag>
+        </Div>
+        <Text m={{ b: "1rem" }}>{truncateText(project.description, 150)}</Text>
+        <p className="linkTo">Xem thêm</p>
+      </Div>
+    </Link>
+))}
           </div>
+          {item.projects.length > visibleProjectsByYear[item.year] && (
+            <Div m={{ t: "2rem" }} d="flex" justify="center">
+              <Button 
+              onClick={() => handleShowMore(item.year)}
+              bg="#FFE381"
+              textColor="dark"
+              hoverBg="warning700"
+              >Hiển thị thêm</Button>
+            </Div>
+          )}
         </Div>
       ))}
-
+      
       <Footer />
     </section>
   );
