@@ -36,10 +36,12 @@ const AboutUs = () => {
         m={{b: "2em" }}
         >Một dự án của các sinh viên trường đại học FPT</Text>
         <Text
-        textSize="heading"
+        textSize="title"
         m={{ t: "1em" }}
         w={{xs: "100%", md:"60%"}}
-        >Dự án “Hành trình SSG” nhằm mục đích tổng hợp và chia sẻ thông tin về các dự án từ các lớp và khóa học trước trong môn SGG - Kỹ năng Giao tiếp và Cộng tác. Trang web này sẽ là nơi trưng bày các dự án đa dạng như thiện nguyện, short film, workshop, gây quỹ, và talkshow. Mục tiêu sẽ là tạo ra một trang web giúp sinh viên hiện tại và tương lai dễ dàng tiếp cận thông tin, học hỏi từ những dự án đã thành công, và khuyến khích họ đóng góp ý tưởng sáng tạo cho các hoạt động tiếp theo.
+        >Trong các khóa học trước của môn học SSG, sinh viên đã thực hiện nhiều dự án sáng tạo như tổ chức talkshow, làm phim ngắn, thực hiện các chiến dịch gây quỹ, và điều phối các hoạt động thiện nguyện. Những dự án này không chỉ là kết quả của sự làm việc nhóm mà còn phản ánh sự phát triển kỹ năng giao tiếp và điều phối của sinh viên.<br/>
+        Tuy nhiên, hiện tại trang Facebook “Dự án Kỹ năng mềm - FPT University” chưa đáp ứng được yêu cầu là nơi sắp xếp dễ tìm thể loại dự án dễ dàng và chưa có một trang web tập trung để lưu trữ và chia sẻ thông tin về các dự án này. Điều này làm giảm khả năng học hỏi và tham khảo từ các dự án trước đó, gây khó khăn trong việc xây dựng ý tưởng mới. Việc thiếu một cơ sở dữ liệu trực quan và dễ tiếp cận cũng hạn chế sự kết nối giữa các thế hệ sinh viên.<br/>
+        Vì vậy, dự án “Hành trình SSG” ra đời nhằm đáp ứng nhu cầu này, đồng thời tạo ra một không gian để chia sẻ, lưu trữ và trưng bày thành quả của sinh viên qua các năm. Chúng tớ hy vọng rằng với sự ra đời của dự án này, các bạn sinh viên sẽ có thêm nhiều cơ hội để học hỏi, phát triển và kết nối với nhau.<br/>
         </Text>
         <Text
         textSize="subheader"
