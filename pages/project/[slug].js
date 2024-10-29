@@ -108,7 +108,7 @@ const ProjectInfo = ({data}) => {
           prefix={<Icon name="Link" size="12px" m={{ r: "0.25rem" }} />}
           cursor="pointer"
         >
-          Link Facebook
+          Link
         </Tag>
       </Anchor>
       </Div>
