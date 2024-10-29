@@ -95,55 +95,51 @@ const Prj = ({ data }) => {
             </div>
           </Div>
           <div className="project__list">
-          {item.projects
-  .sort(() => Math.random() - 0.5) // Xáo trộn mảng dự án
-  .slice(0, visibleProjectsByYear[item.year])
-  .map((project, projectIndex) => (
-    <Link href={`/project/${project.slug}`} key={projectIndex} passHref className="prj">
-      <Div 
-        p="1em 1em 3em"
-        hoverBg="gray200"
-        rounded="md"
-        transition
-        cursor="pointer"
-      >
-        <div className={"project__image"}>
-          <Image 
-            src={project.image} 
-            alt={project.name}
-            fill
-            quality={50}
-            loading="lazy"
-            style={{
-              objectFit: 'cover',
-              borderRadius: '10px',
-            }}
-          />
-        </div>
-        <Text textSize="title" textWeight="bold">{project.name}</Text>
-        <Div d="flex" m={{ t: "0.5rem" }}>
-          <Tag
-            bg="success700"
-            textColor="success100"
-            m={{ r: "0.5rem", b: "1rem" }}
-          >
-            {project.genre}
-          </Tag>
-          <Tag
-            bg="gray100"
-            borderColor="gray500"
-            textColor="dark"
-            border="1px solid"
-            m={{ r: "0.5rem", b: "1rem" }}
-          >
-            Nhóm {project.group}
-          </Tag>
-        </Div>
-        <Text m={{ b: "1rem" }}>{truncateText(project.description, 150)}</Text>
-        <p className="linkTo">Xem thêm</p>
-      </Div>
-    </Link>
-))}
+            {item.projects.slice(0, visibleProjectsByYear[item.year]).map((project, projectIndex) => (
+              <Link href={`/project/${project.slug}`} key={projectIndex} passHref className="prj">
+                <Div 
+                  p="1em 1em 3em"
+                  hoverBg="gray200"
+                  rounded="md"
+                  transition
+                  cursor="pointer"
+                >
+                  <div className={"project__image "}>
+                    <Image 
+                      src={project.image} 
+                      alt={project.name}
+                      fill
+                      quality={50}
+                      loading="lazy"
+                      style={{
+                        objectFit: 'cover',
+                        borderRadius: '10px',
+                      }}
+                    />
+                  </div>
+                  <Text textSize="title" textWeight="bold">{project.name}</Text>
+                  <Div
+                  d="flex"
+                  m={{ t: "0.5rem" }}
+                  >
+                  <Tag
+                  bg="success700"
+                  textColor="success100"
+                  m={{ r: "0.5rem", b: "1rem" }}
+                  >{project.genre}</Tag>
+                  <Tag
+                  bg="gray100"
+                  borderColor="gray500"
+                  textColor="dark"
+                  border="1px solid"
+                  m={{ r: "0.5rem", b: "1rem" }}
+                  >Nhóm {project.group}</Tag>
+                  </Div>
+                  <Text m={{ b: "1rem" }}>{truncateText(project.description, 150)}</Text>
+                  <p className="linkTo">Xem thêm</p>
+                </Div>
+              </Link>
+            ))}
           </div>
           {item.projects.length > visibleProjectsByYear[item.year] && (
             <Div m={{ t: "2rem" }} d="flex" justify="center">
