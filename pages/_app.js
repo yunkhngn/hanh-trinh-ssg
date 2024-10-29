@@ -10,7 +10,6 @@ import { Analytics } from "@vercel/analytics/react"
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   const [search, openSearch] = useState(false);
-  console.log('search', search)
   return (
     <StyletronProvider value={styletron}>
       <AnimatePresence initial={ false } mode={ 'wait' }>
