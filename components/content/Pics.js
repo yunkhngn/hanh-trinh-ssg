@@ -9,6 +9,14 @@ const Pics = ({ data }) => {
   const handleImageLoad = () => {
     setLoaded(true);
   };
+  const images = data[0].imgs.map((item) => {
+    return {
+      id: item.sys.id,
+      url: 'https:' + item.fields.file.url,
+    };
+  }
+  );
+  console.log(images);
   return (
     <section className="wrapper">
     <Title 
@@ -17,11 +25,11 @@ const Pics = ({ data }) => {
         size="display3"
         >Thư viện</Title>
     <div className="picsGallery">
-      {data.length > 0 ? (data.map((item) => (
+      {images.length > 0 ? (images.map((item) => (
         <div key={item.id} className={"picHolder " + (loaded ? "" : "skeleton")}>
           <Image
-            src={item.image}
-            alt={item.title}
+            src={item.url}
+            alt="abc"
             fill
             loading="lazy"
             onLoad={handleImageLoad}

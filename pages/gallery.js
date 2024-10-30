@@ -25,15 +25,13 @@ export async function getStaticProps() {
   const data = response.items.map((item) => {
     return {
       id: item.sys.id,
-      image: 'https:' + item.fields.images.fields.file.url,
       title: item.fields.title,
-      createdAt: item.sys.createdAt, 
-      updatedAt: item.sys.updatedAt,
+      imgs: item.fields.imgs,
     };
   });
   return {
     props: {
-      data: data
+      data: data,
     },
     revalidate: 60
   };
