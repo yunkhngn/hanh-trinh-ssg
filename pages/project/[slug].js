@@ -3,7 +3,6 @@ import React from 'react'
 import { Text, Div, Tag, Anchor, Icon } from "atomize";
 import Link from 'next/link';
 import Image from 'next/image';
-
 const contentful = require('contentful');
 const client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -12,7 +11,6 @@ const client = contentful.createClient({
 });
 
 export async function getStaticPaths() {
-    // Fetch all posts to get slugs for each post
     const response = await client.getEntries({ content_type: "project" });
   
     const paths = response.items.map((item) => ({
@@ -62,7 +60,6 @@ export async function getStaticPaths() {
   }
 
 const ProjectInfo = ({data}) => {
-  console.log(data)
   if (!data) {
     return <div>Project not found.</div>;
   }
@@ -72,6 +69,7 @@ const ProjectInfo = ({data}) => {
     url: `https://hanhtrinhssg.tech/project/${data.slug}`,
     img: "https:" + data.image[0].fields.file.url,
   };
+
   return (
     <Template meta={desc}>
         <div className='wrapper'>

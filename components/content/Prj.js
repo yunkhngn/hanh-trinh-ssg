@@ -15,6 +15,11 @@ const Prj = ({ data }) => {
     }, {})
   );
 
+  const [loaded, setLoaded] = useState(false);
+  const handleImageLoad = () => {
+    setLoaded(true);
+  };
+
   const handleYearChange = (e) => setSelectedYear(e.target.value);
   const handleTypeChange = (e) => setSelectedType(e.target.value);
   const handleSearchChange = (e) => setSearchText(e.target.value);
@@ -104,12 +109,13 @@ const Prj = ({ data }) => {
                   transition
                   cursor="pointer"
                 >
-                  <div className={"project__image "}>
+                  <div className={"project__image "+ (loaded ? "" : "skeleton")}>
                     <Image 
                       src={project.image} 
                       alt={project.name}
                       fill
                       quality={50}
+                      onLoad={handleImageLoad}
                       loading="lazy"
                       style={{
                         objectFit: 'cover',
