@@ -97,6 +97,10 @@ html ::selection{
   margin-left: 2em;
   margin-top: 1em;
 }
+
+.linkRef{
+  color: #41a0d8;
+}
 .Paragraph{
   margin-top:2em;
   font-size: 16px;

@@ -69,7 +69,11 @@ const ProjectInfo = ({data}) => {
     url: `https://hanhtrinhssg.tech/project/${data.slug}`,
     img: "https:" + data.image[0].fields.file.url,
   };
-
+  const FormatShowLink = (link) => {
+    let result = link.replace(/^https?:\/\//, '');
+    result = result.replace(/^www\./, '');
+    return result;
+  }  
   return (
     <Template meta={desc}>
         <div className='wrapper'>
@@ -144,10 +148,10 @@ const ProjectInfo = ({data}) => {
       </Div>
       }
     </div>
-    <Text textSize="subheader" w={{xs: "90%", md:"60%"}} m={{ t: "2em" }}>
-        <strong>References: </strong> {data.references}
-      </Text>
       <hr className="seperate"/>
+      <Text textSize="subheader">
+        <strong>Trích nguồn: </strong> <a className="linkRef" href={data.references} target='_blank' >{FormatShowLink(data.references)}</a>
+      </Text>
     </Div>
         <Link href="/project">
             <Text
