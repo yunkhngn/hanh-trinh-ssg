@@ -12,9 +12,9 @@ const ErrorPage = () => {
     <Template meta={desc}>
         <div className="wrapper">
             <Title
-                pre="/ This does not exist"
+                pre="/ This project does not exist"
                 size="display3"
-                label="Hình như cậu đã đi lạc rồi!"
+                label="Không tìm thấy dự án của cậu!"
             >Error 404!</Title>
             <Link href="/"><i>Quay trở lại trang chủ...</i></Link>
         </div>
