@@ -144,6 +144,9 @@ const ProjectInfo = ({data}) => {
       </Div>
       }
     </div>
+    <Text textSize="subheader" w={{xs: "90%", md:"60%"}} m={{ t: "2em" }}>
+        <strong>References: </strong> {data.references}
+      </Text>
       <hr className="seperate"/>
     </Div>
         <Link href="/project">
