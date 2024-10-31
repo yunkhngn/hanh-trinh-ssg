@@ -2,22 +2,30 @@ import React from "react";
 import Link from "next/link";
 import { Icon, Button } from "atomize";
 import { usePathname } from 'next/navigation'
+import { useState } from "react";
 
 const IconNav = ({ name, route }) => {
   const pathname = usePathname()
-
+  const [active, setActive] = useState("25px");
+  const handleClick = () => {
+    setActive("22px");
+    setTimeout(() => {
+      setActive("25px");
+    }, 120);
+  };
   return (
     <Link href={route} passHref>
       <Button
         h="3rem"
         w="100%"
-        bg={pathname === route ? (pathname === "/donation" ? "brand100" : "gray200") : "white"}
-        hoverBg={pathname === route ? (pathname === "/donation" ? "brand100" : "gray200") : "gray200"}
+        bg={pathname === route ? (pathname === "/project" ? "success100" : "gray200") : "white"}
+        hoverBg={pathname === route ? (pathname === "/project" ? "success100" : "gray200") : "gray200"}
         rounded="10px"
         m="1em auto 1em"
         transition
+        onClick={handleClick}
       >
-        <Icon name={name} size="25px" color={pathname === route ? (pathname === "/donation" ? "brand800" : "black500") : "gray600"} />
+        <Icon name={name} size={active} color={pathname === route ? (pathname === "/project" ? "success800" : "black500") : "gray600"} />
       </Button>
     </Link>
   );

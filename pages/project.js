@@ -47,6 +47,7 @@ export async function getStaticProps() {
   }, {}))
   .map(([year, projects]) => ({ year: Number(year), projects }))
   .sort((a, b) => b.year - a.year);
+
   return {
     props: {
       data: groupedData

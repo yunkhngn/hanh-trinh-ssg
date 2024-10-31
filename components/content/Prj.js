@@ -10,7 +10,7 @@ const Prj = ({ data }) => {
   const [searchText, setSearchText] = useState("");
   const [visibleProjectsByYear, setVisibleProjectsByYear] = useState(
     data.reduce((acc, item) => {
-      acc[item.year] = 6; // Mặc định hiển thị 20 dự án mỗi năm
+      acc[item.year] = 6;
       return acc;
     }, {})
   );
