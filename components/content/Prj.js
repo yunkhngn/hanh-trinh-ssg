@@ -27,7 +27,7 @@ const Prj = ({ data }) => {
   const handleShowMore = (year) => {
     setVisibleProjectsByYear((prev) => ({
       ...prev,
-      [year]: prev[year] + 6, // Tăng thêm 20 dự án cho năm được nhấn
+      [year]: prev[year] + 6,
     }));
   };
 
@@ -83,7 +83,7 @@ const Prj = ({ data }) => {
           <option value="all">Dự án</option>
           <option value="Thiết kế ứng dụng">Thiết kế ứng dụng</option>
           <option value="Thiện nguyện">Thiện nguyện</option>
-          <option value="Làm phim">Làm phim</option>
+          <option value="Làm video">Làm video</option>
           <option value="Tổ chức sự kiện">Tổ chức sự kiện</option>
           <option value="Khác">Khác</option>
         </select>
