@@ -1,5 +1,5 @@
 import React from 'react'
-import {Div, Button} from 'atomize'
+import {Div, Button, Icon} from 'atomize'
 import Link from 'next/link'
 
 const SidePanel = () => {
@@ -22,6 +22,15 @@ const SidePanel = () => {
             m={{ t: '2em',b: '1em' }}
             bg="black900"
             hoverBg="black500"
+            p={{ r: "1.5rem", l: "1rem" }}
+            prefix={
+              <Icon
+                name="Search"
+                size="16px"
+                color="white"
+                m={{ r: "0.5rem" }}
+              />
+            }
             >Xem ngay</Button>
           </Link>
       </div>

@@ -140,7 +140,7 @@ const Prj = ({ data }) => {
                   m={{ t: "0.5rem" }}
                   >
                   <Tag
-                  bg="success700"
+                  bg="#00748b"
                   textColor="success100"
                   m={{ r: "0.5rem", b: "1rem" }}
                   >{project.genre}</Tag>
@@ -162,7 +162,7 @@ const Prj = ({ data }) => {
             <Div m={{ t: "2rem" }} d="flex" justify="center">
               <Button 
               onClick={() => handleShowMore(item.year)}
-              bg="#FFE381"
+              bg="#f8a509"
               textColor="dark"
               hoverBg="warning700"
               >Hiển thị thêm</Button>

@@ -88,7 +88,7 @@ const ProjectInfo = ({data}) => {
       </Text>
       <Div d="flex" flexDir="row" m={{b:"2em"}} >
         <Tag
-          bg="brand700"
+          bg="#00748b"
           textColor="white"
           m={{ r: "0.5rem", b: "1rem" }}
         >
@@ -96,9 +96,9 @@ const ProjectInfo = ({data}) => {
         </Tag>
         <Tag
           bg="white"
-          textColor="success700"
+          textColor="#f8a509"
           border="1px solid"
-          borderColor="success500"
+          borderColor="#f8a509"
           m={{ r: "0.5rem", b: "1rem" }}
         >
          Năm {data.year}
