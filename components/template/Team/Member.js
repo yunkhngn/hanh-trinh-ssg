@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Member = ({ name, desc, img, link, type }) => {
   return (
-    <Div rounded="16px" hoverBg={{xs:"",  md:"warning300"}} p={{xs:"0px", md:"2em 2em 4em" }}transition>
+    <Div rounded="16px" hoverBg={{xs:"",  md:"warning300"}} p={{xs:"0px", md:"2em 2em 2em" }}transition>
       <div className="teamImage">
         <Image
           src={img}

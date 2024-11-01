@@ -251,7 +251,6 @@ html ::selection{
   position: relative;
   aspect-ratio: 1/1;
   overflow: hidden;
-  margin-top:1em;
   border-radius: 12px;
   cursor: pointer;
 }
