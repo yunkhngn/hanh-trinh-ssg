@@ -41,7 +41,6 @@ export async function getStaticPaths() {
             link: item.fields.link,
             year: item.fields.year,
             group: item.fields.group,
-            references: item.fields.references,
         };
   
         return {
