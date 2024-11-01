@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://luahanhphuc.com
+Host: https://hanhtrinhssg.tech
 
 # Sitemaps
-Sitemap: https://luahanhphuc.com/sitemap.xml
+Sitemap: https://hanhtrinhssg.tech/sitemap.xml
