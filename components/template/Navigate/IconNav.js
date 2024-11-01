@@ -14,7 +14,7 @@ const IconNav = ({ name, route }) => {
     }, 120);
   };
   return (
-    <Link href={route} passHref>
+    <Link href={route} passHref className="iconNav">
       <Button
         h="3rem"
         w="100%"

@@ -44,9 +44,7 @@ const NavMobile = () => {
           textColor="black500"
           m="0.5em"
           w="90%"
-          p={{b: "1em"}}
           transition
-          border={{ b: "1px solid" }}
           borderColor="gray300"
           justify="flex-start"
           onClick={() => window.open("https://www.facebook.com/hanhtrinhssg")}
@@ -54,22 +52,6 @@ const NavMobile = () => {
           <Text
           color="black500"
           >Fanpage dự án</Text>
-        </Div>
-        <Div
-          bg="white"
-          d="flex"
-          align="center"
-          textAlign="center"
-          textColor="black500"
-          m="0.5em"
-          w="90%"
-          transition
-          justify="flex-start"
-          onClick={() => window.location.href = "mailto:hanhtrinhssg@gmail.com"}
-        >
-          <Text
-          color="black500"
-          >Mail dự án</Text>
         </Div>
       </Div>
     </div>

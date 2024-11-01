@@ -182,9 +182,6 @@ html ::selection{
   overflow: hidden;
   cursor: pointer;
 }
-.iconNav{
-  background-color: red !important;
-}
 
 .path{
   position: relative;

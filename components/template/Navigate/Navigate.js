@@ -19,7 +19,6 @@ const Navigate = ({openSearch,search}) => {
       </div>
       <div className={styles.setting}>
         <IconSetting name="Facebook" link="https://www.facebook.com/hanhtrinhssg" />
-        <IconSetting name="Email" link="mailto:hanhtrinhssg@gmail.com" />
       </div>
       <div className={styles.mobile}>
         <NavMobile />
