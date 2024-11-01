@@ -1,5 +1,5 @@
 import React from 'react'
-import {AboutUs, Title, TeamMember, Footer} from '../template/'
+import {AboutUs, Title, TeamMember, Footer, ImageFull} from '../template/'
 
 const About = () => {
   return (
@@ -16,6 +16,7 @@ const About = () => {
         size="display1"
         >Thành viên dự án</Title>
       <TeamMember/>
+      <ImageFull img="/stock/stock-4.jpg" text="about us" />
       <Footer/>
     </section>
   )

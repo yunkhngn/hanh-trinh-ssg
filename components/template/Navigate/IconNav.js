@@ -5,9 +5,7 @@ import { usePathname } from 'next/navigation'
 import { useState } from "react";
 
 const IconNav = ({ name, route }) => {
-  //path name include /project ?
   const pathname = usePathname()
-  console.log(pathname)
   const [active, setActive] = useState("25px");
   const handleClick = () => {
     setActive("22px");
