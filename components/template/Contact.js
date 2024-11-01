@@ -21,6 +21,9 @@ const Contact = () => {
         <Text
         textSize="subheader"
         ><strong>Facebook:</strong> <i><a href="https://facebook.com/hanhtrinhssg">Hành Trình SSG</a></i></Text>
+        <Text
+        textSize="subheader"
+        ><strong>Đóng góp cho website:</strong> <i><a href="https://github.com/yunkhngn/hanh-trinh-ssg">Github Repository</a></i></Text>
     </Div>
   )
 }

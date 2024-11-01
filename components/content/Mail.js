@@ -1,5 +1,5 @@
 import React from 'react'
-import {Title, Footer, Contact} from '../template'
+import {Title, Footer, Contact, ImageFull} from '../template'
 
 const Mail = () => {
   return (
@@ -10,6 +10,7 @@ const Mail = () => {
         size="display3"
         >Liên hệ</Title>
         <Contact/>
+        <ImageFull img="/stock/stock-3.jpg" text="Liên hệ với dự án Hành Trình SSG."/>
         <Footer/>
     </section>
   )
