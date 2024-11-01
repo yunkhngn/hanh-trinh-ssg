@@ -32,10 +32,11 @@ export async function getStaticProps() {
       image: "https:" + item.fields.image[0].fields.file.url,
       year: item.fields.year,
       group: item.fields.group,
+      createAt: item.sys.createdAt,
     };
   })
 
-  data.sort(() => Math.random() - 0.5);
+  data.sort((a, b) => new Date(b.createAt) - new Date(a.createAt));
 
   const groupedData = Object.entries(data.reduce((acc, project) => {
     const { year } = project;
