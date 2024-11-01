@@ -16,7 +16,6 @@ const Pics = ({ data }) => {
     };
   }
   );
-  console.log(images);
   return (
     <section className="wrapper">
     <Title 

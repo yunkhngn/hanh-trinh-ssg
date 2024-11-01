@@ -16,7 +16,15 @@ const IconNavBottom = ({ name, route }) => {
         align="center"
         transition
       >
-        <Icon name={name} size="25px" m="auto" color={pathname === route ? (pathname === "/donation" ? "brand800" : "black500") : "gray600"} />
+        <Icon name={name} size="25px" m="auto" color={
+          route === "/"
+          ? pathname === "/"
+            ? "black500" 
+            : "gray600"
+            : pathname.startsWith(route)
+            ? "black500" 
+            : "gray600"
+        } />
       </Div>
     </Link>
   );
