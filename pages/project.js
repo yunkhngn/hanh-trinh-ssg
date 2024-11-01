@@ -34,6 +34,9 @@ export async function getStaticProps() {
       group: item.fields.group,
     };
   })
+
+  data.sort(() => Math.random() - 0.5);
+
   const groupedData = Object.entries(data.reduce((acc, project) => {
     const { year } = project;
   
