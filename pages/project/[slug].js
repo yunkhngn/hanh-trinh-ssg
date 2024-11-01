@@ -150,7 +150,7 @@ const ProjectInfo = ({data}) => {
     </div>
       <hr className="seperate"/>
       <Text textSize="subheader">
-        <strong>Trích nguồn: </strong> <a className="linkRef" href={data.references} target='_blank' >{FormatShowLink(data.references)}</a>
+        <strong>Trích nguồn: </strong> <a className="linkRef" href={data.link} target='_blank' >{FormatShowLink(data.link)}</a>
       </Text>
     </Div>
         <Link href="/project">
