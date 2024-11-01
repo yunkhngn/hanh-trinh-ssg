@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { Title, Footer, SearchField } from "../template";
+import { Title, Footer } from "../template";
 import Link from "next/link";
-import { Div, Text, Tag, Button } from "atomize";
+import { Div, Text, Tag, Button, Input } from "atomize";
 import Image from "next/image";
 
 const Prj = ({ data }) => {
   const [selectedYear, setSelectedYear] = useState("all");
   const [selectedType, setSelectedType] = useState("all");
   const [searchText, setSearchText] = useState("");
+
   const [visibleProjectsByYear, setVisibleProjectsByYear] = useState(
     data.reduce((acc, item) => {
       acc[item.year] = 6;
@@ -66,10 +67,20 @@ const Prj = ({ data }) => {
       </Title>
 
       {/* Tìm kiếm */}
-      <SearchField 
-        placeholder="Tìm kiếm dự án theo tên..." 
-        postName="prj"
+      <Input
+        placeholder="Tìm kiếm dự án..."
+        m={{ t: "1em", b: "1.5em" }}
+        w={{ xs: "100%", md: "50%" }}
+        h="3.5em"
+        textSize="subheader"
+        textColor="black"
+        rounded="12px"
+        focusBorderColor="gray300"
         onChange={handleSearchChange}
+        transition
+        border="1px solid"
+        bg="#f9f9f9"
+        borderColor="gray300"
       />
 
       <Div d="flex">
