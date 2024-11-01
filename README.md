@@ -41,13 +41,12 @@ yarn start
 ```
 
 ## Feature Roadmap
-- [ ] Image Skeleton
-- [ ] Create Post page
-- [ ] Create courasel
-- [ ] Optimize image
-- [ ] Finish content
-- [ ] Create campaign page
-- [ ] Create mail template
+- [X] Image Skeleton
+- [X] Create Post page
+- [X] Create courasel
+- [X] Optimize image
+- [X] Finish content
+- [ ] Add more stuff (?)
 
 
 ## Contributing
