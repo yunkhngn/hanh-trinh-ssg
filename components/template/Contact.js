@@ -6,21 +6,21 @@ const Contact = () => {
     w={{ xs: "100%", md: "50%" }}
     >
         <Text
-        textSize="title"
-        >Liên hệ với chúng tớ để biết thêm thông tin về dự án.</Text>
+        textSize="subheader"
+        >Liên hệ với chúng tớ để biết thêm thông tin về dự án, hoặc có góp ý thêm về nội dung, cũng như đăng tải các dự án của các bạn.</Text>
         <br/>
         <Text
         textSize="subheader"
-        >Trưởng dự án: Nguyễn Đăng Khoa</Text>
+        ><strong>Trưởng dự án:</strong> Nguyễn Đăng Khoa</Text>
         <Text
         textSize="subheader"
-        >Giảng viên hướng dẫn: Khuất Thị Hoa</Text>
+        ><strong>Giảng viên hướng dẫn:</strong> Khuất Thị Hoa</Text>
         <Text
         textSize="subheader"
-        >Gmail: hanhtrinhssg@gmail.com</Text>
+        ><strong>Gmail:</strong> hanhtrinhssg@gmail.com</Text>
         <Text
         textSize="subheader"
-        >Facebook: Hành Trình SSG</Text>
+        ><strong>Facebook:</strong> <i><a href="https://facebook.com/hanhtrinhssg">Hành Trình SSG</a></i></Text>
     </Div>
   )
 }

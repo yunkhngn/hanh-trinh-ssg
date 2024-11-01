@@ -2,7 +2,7 @@
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: process.env.SITE_URL || 'https://luahanhphuc.com',
+    siteUrl: process.env.SITE_URL || 'https://hanhtrinhssg.tech',
     generateRobotsTxt: true, // Tạo tệp robots.txt
     changefreq: 'daily', // Tần suất thay đổi nội dung
     priority: 0.7, // Độ ưu tiên của các trang

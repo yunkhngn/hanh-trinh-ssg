@@ -1,5 +1,7 @@
 import React from 'react'
-import {Div, Button, scrollTo} from 'atomize'
+import {Div, Button} from 'atomize'
+import Link from 'next/link'
+
 const SidePanel = () => {
   return (
    <Div
@@ -14,13 +16,14 @@ const SidePanel = () => {
       <div className="Heading">
         <h1 className="SidePanelFont">Hành Trình <span className="insideText">SSG</span></h1>
         <p className="Paragraph">Hành trình SSG là kho lưu trữ các dự án SSG qua các kỳ, đồng thời là cầu nối kết nối các thế hệ sinh viên. Tại đây, sinh viên có thể chia sẻ và học hỏi từ những kinh nghiệm thực tế của các dự án SSG trước đây.</p>
-          <Button
-          w="200px"
-          m={{ t: '2em',b: '1em' }}
-          bg="black900"
-          hoverBg="black500"
-          onClick={() => scrollTo("#homePageTag", 0, 0, 100)}
-          >Tìm hiểu thêm</Button>
+          <Link href="/project" passHref>
+            <Button
+            w="200px"
+            m={{ t: '2em',b: '1em' }}
+            bg="black900"
+            hoverBg="black500"
+            >Xem ngay</Button>
+          </Link>
       </div>
     </Div>
   )

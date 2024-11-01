@@ -14,7 +14,7 @@ const Homepage = () => {
           Tổng quan dự án
         </Title>
         <AboutUs />
-        <ImageFull img="/stock/forest.jpg" text="homeImage" />
+        <ImageFull img="/stock/stock-2.jpg" text="homeImage" />
         <Footer />
       </div>
     </section>

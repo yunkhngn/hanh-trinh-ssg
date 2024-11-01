@@ -20,7 +20,7 @@ const Pics = ({ data }) => {
   return (
     <section className="wrapper">
     <Title 
-        label="Thư viện ảnh của các dự án."
+        label="Thư viện ảnh hoạt động và logo của các dự án đã được đăng tải."
         pre="/ Gallery."
         size="display3"
         >Thư viện</Title>

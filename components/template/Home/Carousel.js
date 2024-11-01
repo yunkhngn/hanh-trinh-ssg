@@ -11,7 +11,7 @@ const Carousel = () => {
       h={{ xs: "auto", md: "100vh" }}
     >
           <div className="carousel--img">
-            <Image src="/stock/forest.jpg"
+            <Image src="/stock/stock-1.jpg"
             alt="stock" 
             fill
             quality={75}

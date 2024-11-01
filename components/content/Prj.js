@@ -61,7 +61,7 @@ const Prj = ({ data }) => {
 
   return (
     <section className="poster wrapper">
-      <Title label="Các dự án SSG đã hoàn thành, được đi vào hoạt động được tổng hợp." pre="/ Project." size="display3">
+      <Title label="Các dự án SSG đã hoàn thành, được đi vào hoạt động được chúng mình tổng hợp tại kho tàng dự án." pre="/ Project." size="display3">
         Kho tàng dự án
       </Title>
 

@@ -12,7 +12,7 @@ const Poster = ({data}) => {
   return (
     <section className='poster wrapper'>
         <Title 
-        label="Bài viết về dự án Hành Trình SSG và môn học SSG."
+        label="Các bài viết về dự án Hành Trình SSG và môn học SSG104 đã được đăng tải trên fanpage của dự án."
         pre="/ Post."
         size="display3"
         >Bài đăng</Title>
