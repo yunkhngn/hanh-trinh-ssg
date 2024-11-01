@@ -118,7 +118,7 @@ const ProjectInfo = ({data}) => {
        Nhóm thực hiện: <strong>{data.group}</strong>
       </Text>
       <Text textSize="subheader" m={{ b: "10px", t: "10px" }}>
-       Giảng viên hướng dẫn / Lớp: <strong>{data.guider}</strong>
+       Giảng viên hướng dẫn: <strong>{data.guider}</strong>
       </Text>
       <Text textSize="subheader" m={{ b: "10px", t: "10px" }}>
         Năm thực hiện: <strong>{data.year}</strong>
