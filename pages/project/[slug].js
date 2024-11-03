@@ -134,7 +134,7 @@ const ProjectInfo = ({data}) => {
             src={"https:" + item.fields.file.url}
             alt={item.fields.title}
             fill
-            loading="lazy"
+            priority={true}
             style={{
               objectFit: "cover",
             }}
