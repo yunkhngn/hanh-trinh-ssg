@@ -120,14 +120,15 @@ const Prj = ({ data }) => {
                   transition
                   cursor="pointer"
                 >
-                  <div className={"project__image "+ (loaded ? "" : "skeleton")}>
+                  <div className={"project__image "+ (loaded ? "" : "")}>
                     <Image 
                       src={project.image} 
                       alt={project.name}
                       fill
                       quality={50}
-                      onLoad={handleImageLoad}
-                      loading="lazy"
+                      priority={true}
+                      // onLoad={handleImageLoad}
+                      // loading="lazy"
                       style={{
                         objectFit: 'cover',
                         borderRadius: '10px',
