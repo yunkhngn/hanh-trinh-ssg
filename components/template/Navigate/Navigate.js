@@ -9,7 +9,7 @@ import { navRoute } from "../../lib";
 const Navigate = ({openSearch,search}) => {
   return (
     <nav className={styles.container}>
-      <div className={styles.logo} onClick={() => openSearch(search)}>
+      <div className={styles.logo} onClick={() => openSearch(!search)}>
           <Image src="/logo.svg" alt="logo" width={50} height={50} priority={true}/>
       </div>
       <div className={styles.nav}>
